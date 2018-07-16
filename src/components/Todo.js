@@ -14,11 +14,12 @@ const getStyles = ({ completed }) => {
   }
 }
 
-const Todo = ({ completed, text }) => {
+const Todo = ({ completed, onClick, text }) => {
   const styles = getStyles({ completed })
   return (
     <ListItem>
       <Checkbox
+        onChange={onClick}
         checked={completed}
       />
       <ListItemText
@@ -30,6 +31,8 @@ const Todo = ({ completed, text }) => {
 }
 
 Todo.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  completed: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired
 }
 

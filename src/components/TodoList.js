@@ -1,5 +1,5 @@
 import React from 'react'
-import v4 from 'uuid'
+import PropTypes from 'prop-types'
 
 import List from '@material-ui/core/List'
 import { withStyles } from '@material-ui/core/styles'
@@ -18,35 +18,23 @@ const styles = theme => ({
   }
 })
 
-const TodoList = ({ classes }) => {
-  const todos = [
-    {
-      id: v4(),
-      text: 'hey',
-      completed: true
-    },
-    {
-      id: v4(),
-      text: 'ho',
-      completed: true
-    },
-    {
-      id: v4(),
-      text: "let's go",
-      completed: false
-    }
-  ]
-
+const TodoList = ({ classes, onTodoClick, todos }) => {
   return (
     <List className={classes.root}>
       {todos.map(todo =>
         <Todo
           key={todo.id}
           {...todo}
+          onClick={() => onTodoClick(todo.id)}
         />
       )}
     </List>
   )
+}
+
+TodoList.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onTodoClick: PropTypes.func.isRequired
 }
 
 export default withStyles(styles)(TodoList)
