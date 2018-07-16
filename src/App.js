@@ -1,18 +1,8 @@
 import React from 'react'
+import Root from './router/Root'
 
-import AddTodo from './components/AddTodo'
-import Footer from './components/Footer'
-import TodoList from './components/TodoList'
-import Wrapper from './components/Wrapper'
-
-const App = () => {
-  return (
-    <Wrapper>
-      <AddTodo />
-      <TodoList />
-      <Footer />
-    </Wrapper>
-  )
-}
+const App = () => (
+  <Root />
+)
 
 export default App

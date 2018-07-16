@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import { withStyles } from '@material-ui/core/styles'
 
@@ -38,9 +37,6 @@ const AddTodo = ({ classes, onAddTodoClick }) => {
       </Button>
     </form>
   )
-}
-AddTodo.propTypes = {
-  onAddTodoClick: PropTypes.func.isRequired
 }
 
 export default withStyles(styles)(AddTodo)
