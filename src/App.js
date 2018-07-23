@@ -1,7 +1,8 @@
 import React from 'react'
+import Root from './router/Root'
 
 const App = () => (
-  <h1>Hello World</h1>
+  <Root />
 )
 
 export default App
