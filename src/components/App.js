@@ -1,14 +1,13 @@
 import React from 'react'
 
-import AddTodo from './AddTodo'
+import { AddTodoContainer, VisibleTodoListContainer } from '../containers'
 import Footer from './Footer'
-import TodoList from './TodoList'
 import Wrapper from './Wrapper'
 
 const App = () => (
   <Wrapper>
-    <AddTodo />
-    <TodoList />
+    <AddTodoContainer />
+    <VisibleTodoListContainer />
     <Footer />
   </Wrapper>
 )
